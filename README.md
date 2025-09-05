@@ -54,10 +54,10 @@ The project is structured around 6 core tables:
 
 ## Highlights
 
-- ✅ **Overdue Tracking**: Includes a dedicated `overdue_summary` table showing fines and overdue counts
-- ✅ **Performance Reports**: `branch_performance_report` summarizes each branch’s activity and revenue
-- ✅ **Stored Procedures**: Simplify book issuing and return logic
-- ✅ **CTAS Usage**: Several tables created using `CREATE TABLE AS SELECT` (CTAS) for summaries like:
+- **Overdue Tracking**: Includes a dedicated `overdue_summary` table showing fines and overdue counts
+- **Performance Reports**: `branch_performance_report` summarizes each branch’s activity and revenue
+- **Stored Procedures**: Simplify book issuing and return logic
+- **CTAS Usage**: Several tables created using `CREATE TABLE AS SELECT` (CTAS) for summaries like:
   - `book_issue_summary`
   - `premium_books`
   - `active_members`
@@ -75,7 +75,7 @@ The project is structured around 6 core tables:
 
 ---
 
-## 📎 Prerequisites
+## Prerequisites
 
 - MySQL Server (8.x recommended)
 - MySQL Workbench or any compatible SQL editor
@@ -83,5 +83,10 @@ The project is structured around 6 core tables:
 
 ---
 
-## 📁 File Structure
+## Future Scope of the Project
+
+- Adding UI/frontend to interact with the system (e.g., Python, PHP, Java)
+- Adding more granular book condition tracking (e.g., Lost, Torn)
+- Introducing different user roles (admin, librarian, member)
+- Fine collection status tracking
 
