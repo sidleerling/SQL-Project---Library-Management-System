@@ -1,4 +1,4 @@
-# SQL-Project: Library Management System
+# SQL Project: Library Management System
 
 This is a comprehensive **SQL-based Library Management System** project that simulates the key operations and reporting functionalities of a real-world library. The project involves the design, implementation, and querying of a relational database using **MySQL**.
 
