@@ -26,7 +26,7 @@ The system is built on **six core tables** with appropriate primary and foreign 
 - **issued_status**: Tracks which books are issued to whom and when  
 - **return_status**: Tracks when books are returned and their condition
 
-![Screenshot](images/ER Diagram - Library Management System.png
+![Screenshot](images/ER%20Diagram%20-%20Library%20Management%20System.png)
 
 Additional derived tables like `book_issue_summary`, `branch_performance_report`, `active_members`, and `overdue_summary` are created using **CTAS (Create Table As Select)** queries to support reporting and business insights.
 
