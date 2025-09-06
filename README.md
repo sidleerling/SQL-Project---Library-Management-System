@@ -2,9 +2,16 @@
 
 ## 1. Background and Overview
 
-This project simulates a Library Management System using SQL to manage and analyze library operations. It focuses on data-driven decision-making by leveraging real-world database design, SQL querying, reporting, and automation techniques.
+This is an SQL based project designed to simulate the daily operations of a modern library. It is designed to efficiently tracking books, members, branches, employees and transaction history (issues/returns) with the primary focus on the following:
 
-The goal is to replicate how modern libraries operate — tracking books, members, employees, branches, book issues/returns — and to surface insights that can improve operational efficiency, member engagement, and financial performance.
+1. Performing CRUD operations as and when there is a new book added to the library, book quality status, employee details
+2. Identify the most frequently issued books
+3. Find out the best performing employee in each branch based on the number of books issued and revenue generated for that branch.
+4. Analyzing branch performance by tracking annual revenue generated per year and book issue counts
+5. Identify the most active members
+6. Create a procedure to track members with overdue books and fine them for the delay.
+
+The goal is to build a robust system using SQL that not only manages library operations but also use the insights to give recommendations that can improve operational efficiency, increase book circulation and revenue, reward employee performance, and enhance member engagement—ultimately fostering a more effective and data-driven library system.
 
 ---
 
@@ -17,7 +24,10 @@ The system is built on **six core tables** with appropriate primary and foreign 
 - **books**: All books in the catalog  
 - **members**: Registered library members  
 - **issued_status**: Tracks which books are issued to whom and when  
-- **return_status**: Tracks when books are returned and their condition  
+- **return_status**: Tracks when books are returned and their condition
+
+
+
 
 Additional derived tables like `book_issue_summary`, `branch_performance_report`, `active_members`, and `overdue_summary` are created using **CTAS (Create Table As Select)** queries to support reporting and business insights.
 
