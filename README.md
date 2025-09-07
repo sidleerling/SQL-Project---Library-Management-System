@@ -28,19 +28,65 @@ The system is built on **six core tables** with appropriate primary and foreign 
 
 ![ER Diagram](ER%20Diagram%20-%20Library%20Management%20System.png)
 
-Additional derived tables like `book_issue_summary`, `branch_performance_report`, `active_members`, and `overdue_summary` are created using **CTAS (Create Table As Select)** queries to support reporting and business insights.
+- Additional derived tables like `book_issue_summary`, `branch_performance_report`, `active_members`, and `overdue_summary` are created using **CTAS (Create Table As Select)** queries to support reporting and business insights.
 
 ---
 
-## 3. Executive Summary
+## 3. Executive Summary and Key Insights
 
 This SQL-based library system answers key business questions such as:
 
-- Which branches or employees are performing best?
-- What’s the status of issued vs. returned books?
-- Who are the most active or overdue members?
-- What categories or books are generating the most rental revenue?
-- Are any books being repeatedly returned in poor condition?
+1. Which book has been issued the most number of times?
+
+```sql
+create table book_issue_summary
+as select bk.isbn, bk.book_title, count(issued_id) as total_times_issued from books as bk
+left join issued_status as i
+on bk.isbn = i.issued_book_isbn
+group by bk.isbn, bk.book_title;
+
+select * from book_issue_summary;
+```
+2. Which book categories have generated the highest rental revenue and whether they are currently available within the library?
+```sql
+select bk.category, sum(bk.rental_price) as total_rental_income from books as bk
+inner join issued_status as i
+on bk.isbn = i.issued_book_isbn
+where status = 'yes'
+group by bk.category;
+
+
+```
+
+4. Which branch has generated the highest revenue and the number of books that have been issued?
+
+```sql
+create table branch_performance_report as
+select br.branch_id, br.manager_id, count(i.issued_id) as no_of_books_issued, count(r.return_id) as no_of_books_returned,
+sum(bo.rental_price) as total_revenue_generated from issued_status as i
+inner join employees as e 
+on i.issued_emp_id = e.emp_id 
+inner join branch as br
+on e.branch_id = br.branch_id
+left join return_status as r
+on i.issued_id = r.issued_id
+inner join books as bo
+on i.issued_book_isbn = bo.isbn
+group by br.branch_id, br.manager_id;
+
+select bpr.branch_id, bpr.total_revenue_generated, b.branch_address from branch_performance_report as bpr 
+inner join branch as b
+on bpr.branch_id = b.branch_id
+order by bpr.total_revenue_generated desc 
+limit 1;
+```
+6. Who are the highest performing employees?
+7. Which books have a price above $7.00? These books would be called 'Premium Books' as they are expensive
+8. Who are the active members that have issued at least one book within the past 2 months?
+9. Which books have been issued but not returned by the members? (Book Tracking)
+10. Using the information above, who are the members with overdue books (books issued more than 30 days ago given that the library has a 1-month return period)?
+11. With the information about members with overdue books, what are the fines each member has to pay for each day the book is overdue?
+12. Are any books being repeatedly returned in poor condition?
 
 Using complex SQL features like **joins, CTEs, subqueries, stored procedures, and triggers**, this system automates routine tasks and enables in-depth analysis of the library's health.
 
