@@ -1,6 +1,6 @@
 # SQL Project - Library Management System
 
-![Library Image](Library%20Image.png)
+![Library Image](Library%20Image.jpg)
 
 ## 1. Background and Overview
 
