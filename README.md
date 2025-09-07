@@ -56,7 +56,7 @@ where status = 'yes'
 group by bk.category;
 ```
 
-4. Which branch has generated the highest revenue and the number of books that have been issued?
+3. Which branch has generated the highest revenue and the number of books that have been issued?
 
 ```sql
 create table branch_performance_report as
@@ -79,7 +79,7 @@ order by bpr.total_revenue_generated desc
 limit 1;
 ```
 
-6. Who are the top 3 best performing employees?
+4. Who are the top 3 best performing employees?
 
 ```sql
 select e.emp_name, br.*, count(issued_book_isbn) as no_of_books_issued from employees as e
@@ -94,14 +94,14 @@ order by count(issued_book_isbn) desc
 limit 3;
 ```
 
-8. Which books have a price above $7.00? These books would be called 'Premium Books' as they are expensive.
+5. Which books have a price above $7.00? These books would be called 'Premium Books' as they are expensive.
 ```sql
 create table premium_books as 
 select isbn, book_title, category, rental_price
 from books where rental_price > 7.5;
 ```
 
-11. Who are the active members that have issued at least one book within the past 2 months?
+6. Who are the active members that have issued at least one book within the past 2 months?
 ```sql
 create table active_members as
 select m.member_id, m.member_name, m.reg_date from members as m 
@@ -112,7 +112,7 @@ group by m.member_id, m.member_name, m.reg_date
 having count(i.issued_member_id) > 1;
 ```
 
-13. Which books have been issued but not returned by the members (Book Tracking)?
+7. Which books have been issued but not returned by the members (Book Tracking)?
 ```sql
 select distinct i.issued_id, i.issued_book_name, i.issued_date from issued_status as i
 left join return_status as r 
@@ -120,7 +120,7 @@ on i.issued_id = r.issued_id
 where r.return_id is null;
 ```
 
-15. Using the information above, who are the members with overdue books (books issued more than 30 days ago given that the library has a 1-month return period)?
+8. Using the information above, who are the members with overdue books (books issued more than 30 days ago given that the library has a 1-month return period)?
 ```sql
 select distinct m.member_id, m.member_name, i.issued_book_name as book_title, 
 datediff(curdate(),i.issued_date) as no_of_days_overdue
@@ -132,7 +132,7 @@ on i.issued_id = r.issued_id
 where r.return_id is null and datediff(curdate(),i.issued_date) > 30;
 ```
 
-17. With the information about members with overdue books, what are the fines each member has to pay for each day the book is overdue (creating an overdue summary report)?
+9. With the information about members with overdue books, what are the fines each member has to pay for each day the book is overdue (creating an overdue summary report)?
 ```sql
 create table overdue_summary as 
 with overdue_books as 
@@ -153,7 +153,7 @@ on ob.member_id = ti.member_id
 order by ob.member_id;
 ```
 
-18. How will the status of each book in the library be tracked and managed effectively (Book Status Management)?
+10. How will the status of each book in the library be tracked and managed effectively (Book Status Management)?
 ```sql
 delimiter $$
 create procedure book_status_management (in v_isbn varchar (17))
@@ -177,7 +177,7 @@ call book_status_management ('978-0-06-025492-6');
 call book_status_management ('978-0-375-41398-8');
 ```
 
-20. Are any books being repeatedly returned in poor condition?
+11. Are any books being repeatedly returned in poor condition?
 ```sql
 select m.member_name, count(r.book_quality) as no_of_damaged_book_issuances from members as m
 inner join issued_status as i
