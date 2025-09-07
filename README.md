@@ -232,8 +232,3 @@ Based on the insights gathered from the queries, the following recommendations h
 - CTAS (Create Table As Select)
 
 ---
-
-## Folder Structure
-
-All SQL code is contained in one structured `.sql` file. Future versions may include:
-
