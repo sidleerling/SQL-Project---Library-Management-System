@@ -216,7 +216,7 @@ Based on the insights gathered from the queries, the following recommendations h
   
 - **Highlighting popular or premium books** which are expensive and tracking their issuances will allow the library to offer discounts or incentives to people to issue those books more often thereby increasing the revenue generated.
    
-- **Underperforming library branches** could have their inventories optimized by understanding which books have not been issued for a long period of time and replace them with books that are recent fan favorites and are trending recently. The books that are issued more often should have more duplicates in the inventory compared to the ones with lower demand to increase book issuances and thereby the total revenue generated. Besides inventory optimization, the member experiences within the branch could be studied and ensure in the future that they are provided the best services which would bring more potential members to the library.
+- **Underperforming library branches** could have their inventories optimized by understanding which books have not been issued for a long period of time and replace them with books that are recent fan favorites and are trending recently. The books that are issued more often should have more duplicates in the inventory compared to the ones with lower demand to increase book issuances and thereby the total revenue generated. Besides inventory optimization, the member experiences within the branch could be studied to ensure that in the future they are provided the best services which would bring more potential members to the library.
 
 ---
 
