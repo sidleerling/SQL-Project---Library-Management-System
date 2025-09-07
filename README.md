@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="Library%20Image.jpg" alt="Library Image" width="500"/>
-</p>
+</p> 
 
 ## 1. Background and Overview
 
