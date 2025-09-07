@@ -155,7 +155,6 @@ order by ob.member_id;
 
 18. How will the status of each book in the library be tracked and managed effectively (Book Status Management)?
 ```sql
-```sql
 delimiter $$
 create procedure book_status_management (in v_isbn varchar (17))
 begin
