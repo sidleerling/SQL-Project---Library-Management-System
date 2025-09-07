@@ -1,5 +1,7 @@
 # SQL Project - Library Management System
 
+![Library Image](Library%20Image.png)
+
 ## 1. Background and Overview
 
 This is an SQL based project designed to simulate the daily operations of a modern library using MySQL. It is designed to efficiently tracking books, members, branches, employees and transaction history (issues/returns) with the primary focus on the following:
