@@ -2,7 +2,7 @@
 
 ## 1. Background and Overview
 
-This is an SQL based project designed to simulate the daily operations of a modern library. It is designed to efficiently tracking books, members, branches, employees and transaction history (issues/returns) with the primary focus on the following:
+This is an SQL based project designed to simulate the daily operations of a modern library using MySQL. It is designed to efficiently tracking books, members, branches, employees and transaction history (issues/returns) with the primary focus on the following:
 
 1. Performing CRUD operations as and when there is a new book added to the library, book quality status, employee details
 2. Identify the most frequently issued books
