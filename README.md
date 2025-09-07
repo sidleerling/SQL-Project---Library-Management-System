@@ -1,6 +1,8 @@
 # SQL Project - Library Management System
 
-![Library Image](Library%20Image.jpg)
+<p align="center">
+  <img src="Library%20Image.jpg" alt="Library Image" width="500"/>
+</p>
 
 ## 1. Background and Overview
 
