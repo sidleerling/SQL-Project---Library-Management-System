@@ -4,7 +4,7 @@
   <img src="Library%20Image.jpg" alt="Library Image" width="500"/>
 </p> 
 
-## 1. Background and Overview
+## Background and Overview
 
 This is an SQL based project designed to simulate the daily operations of a modern library using MySQL. It is designed to efficiently tracking books, members, branches, employees and transaction history (issues/returns) with the primary focus on the following:
 
@@ -19,7 +19,7 @@ The goal is to build a robust system using SQL that not only manages library ope
 
 ---
 
-## 2. Data Structure and Overview
+## Data Structure and Overview
 
 The system is built on **six core tables** with appropriate primary and foreign key relationships as represented in the ER diagram below:
 
@@ -36,7 +36,7 @@ The system is built on **six core tables** with appropriate primary and foreign 
 
 ---
 
-## 3. Executive Summary and Key Insights
+## Executive Summary and Key Insights
 
 This SQL-based library system answers key business questions such as:
 
@@ -208,7 +208,7 @@ having count(r.book_quality) >=1;
   
 ---
 
-## 6. Recommendations
+## Recommendations
 
 Based on the insights gathered from the queries, the following recommendations have been made to improve the library's operational efficiency
 
